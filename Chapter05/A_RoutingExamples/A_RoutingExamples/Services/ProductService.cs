@@ -22,7 +22,7 @@ namespace A_RoutingExamples.Services
 			return product;
 		}
 
-		public List<Product> Seach(string term, StringComparison comparisonType)
+		public List<Product> Search(string term, StringComparison comparisonType)
 		{
 			return _allProducts
 				.Where(x => x.Value.Name.Contains(term, comparisonType))

@@ -1,0 +1,14 @@
+﻿@page
+@model A_RoutingExamples.Pages.SearchModel
+@{
+	ViewData["Title"] = "Search";
+}
+
+<form method="post">
+	<label asp-for="SearchTerm"></label>
+	<input asp-for="SearchTerm" />
+	<span asp-validation-for="SearchTerm"></span>
+
+	<button asp-asp-page-handler="" type="submit">Search</button>
+	<button asp-asp-page-handler="IgnoreCase" type="submit">Search (ignore case)</button>
+</form>
