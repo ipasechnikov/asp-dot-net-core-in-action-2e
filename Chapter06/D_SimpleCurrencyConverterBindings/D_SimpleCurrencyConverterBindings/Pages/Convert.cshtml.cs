@@ -7,7 +7,7 @@ namespace D_SimpleCurrencyConverterBindings.Pages
     {
         public string Values { get; set; }
 
-        public void OnGet(
+        public void OnPost(
             string currencyIn,
             string currencyOut,
             int qty
