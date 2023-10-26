@@ -1,10 +1,22 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "All tasks";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Tasks:</h2>
+        <ul>
+            @foreach (var item in Model.Items)
+            {
+                <li>
+                    <a asp-page="SimpleView" asp-route-id="@item.Id">Simple view</a> /
+                    <a asp-page="ViewToDo" asp-route-id="@item.Id">@string.Join(", ", item.Tasks)</a>
+                </li>
+            }
+        </ul>
+    </div>
 </div>
